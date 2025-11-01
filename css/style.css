@@ -1,0 +1,438 @@
+/* 全局基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
+    color: #34495e;
+    background-color: #f0f4f8;
+    font-size: 16px;
+}
+
+/* 导航栏 + 动画 */
+.navbar {
+    background-color: rgba(53, 74, 96, 0.9);
+    padding: 18px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: #354a60;
+    padding: 15px 0;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.navbar a {
+    color: #e0e7ee;
+    text-decoration: none;
+    margin: 0 18px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #9fc5e8;
+}
+
+/* 内容容器 + 淡入动画 */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: white;
+    min-height: calc(100vh - 134px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 标题样式 */
+h1 {
+    color: #354a60;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #6d9eaf;
+}
+
+h2 {
+    color: #354a60;
+    font-size: 26px;
+    margin: 30px 0 20px;
+    padding-left: 10px;
+    border-left: 4px solid #6d9eaf;
+}
+
+h3 {
+    color: #4a6985;
+    font-size: 22px;
+    margin: 25px 0 15px;
+}
+
+/* 段落与列表 */
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+ul, ol {
+    margin: 0 0 20px 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* 图片样式（优化尺寸）+ 动画 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 首页大图 */
+.img-home {
+    max-width: 200px;
+}
+
+/* 头像图片 */
+.img-avatar {
+    max-width: 200px;
+}
+
+/* 项目图片（小尺寸） */
+.img-project {
+    max-width: 100px;
+}
+
+img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 项目卡片 + 上浮动画 */
+.project-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 视频容器 + 动画 */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 30px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 表格样式 */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    min-width: 500px;
+}
+
+th, td {
+    border: 1px solid #e0e7ee;
+    padding: 14px 18px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f4f8;
+    font-weight: 600;
+    color: #354a60;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* 表单样式 */
+form {
+    margin: 30px 0;
+    background-color: #f8fafc;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #354a60;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #6d9eaf;
+    outline: none;
+}
+
+/* 单选和复选框组 */
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.radio-item, .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 按钮样式 + 动画 */
+button {
+    padding: 12px 24px;
+    background-color: #6d9eaf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #4a6985;
+    transform: scale(1.05);
+}
+
+button[type="reset"] {
+    background-color: #a0aabf;
+    margin-left: 12px;
+}
+
+/* 链接样式 + 动画 */
+a {
+    color: #6d9eaf;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4a6985;
+    text-decoration: underline;
+}
+
+/* 下载按钮样式 */
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6d9eaf;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+    background-color: #4a6985;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #354a60;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* 响应式调整 */
+@media (max-width: 767px) {
+    .navbar a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .content-container {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .radio-group, .checkbox-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0 !important;
+    }
+
+    .img-home {
+        max-width: 100%;
+    }
+}
+/* 1. 标题入场动画 */
+h1, h2, h3 {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: titleFadeIn 0.6s ease forwards;
+}
+
+h1 {
+    animation-delay: 0.1s; /* 标题1延迟出现 */
+}
+
+h2 {
+    animation-delay: 0.3s; /* 标题2延迟更久 */
+}
+
+h3 {
+    animation-delay: 0.5s; /* 标题3最后出现 */
+}
+
+@keyframes titleFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. 列表项逐个出现动画 */
+ul li, ol li {
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: listItemIn 0.4s ease forwards;
+}
+
+/* 列表项依次延迟出现 */
+ul li:nth-child(1), ol li:nth-child(1) { animation-delay: 0.2s; }
+ul li:nth-child(2), ol li:nth-child(2) { animation-delay: 0.4s; }
+ul li:nth-child(3), ol li:nth-child(3) { animation-delay: 0.6s; }
+ul li:nth-child(4), ol li:nth-child(4) { animation-delay: 0.8s; }
+ul li:nth-child(5), ol li:nth-child(5) { animation-delay: 1s; }
+
+@keyframes listItemIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 3. 表单输入框聚焦动画 */
+input:focus, textarea:focus {
+    border-color: #6d9eaf;
+    outline: none;
+    transform: scale(1.01); /* 聚焦时轻微放大 */
+    box-shadow: 0 0 8px rgba(109, 158, 175, 0.3); /* 发光效果 */
+}
+
+/* 4. 页脚淡入动画 */
+footer {
+    opacity: 0;
+    animation: footerFadeIn 1s ease forwards 1.5s; /* 延迟1.5s出现 */
+}
+
+@keyframes footerFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* 5. 下载按钮额外动画 */
+.download-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.download-btn:hover::after {
+    left: 100%; /* 鼠标悬停时出现闪光效果 */
+}
