@@ -5,6 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio - About</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 头像+名字容器：预留右侧空间避免文字重叠 */
+        .profile-wrap {
+            position: relative;
+            width: 100%;
+            min-height: 200px; /* 预留头像高度，避免文字上移 */
+            margin-bottom: 40px;
+            padding-right: 200px; /* 给头像预留右侧空间（比头像宽20px） */
+            box-sizing: border-box;
+        }
+        
+        .name-title {
+            font-size: 32px;
+            color: #354a60;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding-top: 20px;
+        }
+        
+        .img-avatar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 180px; /* 头像宽度 */
+            height: auto;
+            margin: 0 !important; /* 清除默认margin */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* 小屏幕适配：取消右侧留白，头像居中 */
+        @media (max-width: 767px) {
+            .profile-wrap {
+                min-height: auto;
+                padding-right: 0; /* 移动端取消右侧留白 */
+                text-align: center;
+            }
+            .img-avatar {
+                position: static;
+                margin: 20px auto !important;
+                max-width: 150px;
+            }
+            .name-title {
+                display: block;
+                text-align: center;
+                font-size: 26px;
+                padding-top: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -21,9 +71,14 @@
     <div class="content-container">
         <h1>About Me</h1>
 
+        <!-- 头像+名字区域（右上角，预留空间） -->
+        <div class="profile-wrap">
+            <div class="name-title">Wenle Chen</div>
+            <img src="img/about-avatar.jpg" alt="Portrait of Wenle Chen" class="img-avatar">
+        </div>
+
         <section>
             <h2>Personal Introduction</h2>
-            <img src="img/about-avatar.jpg" alt="Portrait of the developer" class="img-avatar">
             <p>I'm a dedicated developer with a strong academic background in mathematics and finance, currently focusing on artificial intelligence and web development. My interdisciplinary approach allows me to solve complex problems with creative technical solutions.</p>
         </section>
 
@@ -35,20 +90,20 @@
         </section>
 
         <section>
-    <h2>Learning Resources</h2>
-    <p>Recommended HTML & CSS Fundamentals Tutorial (from Bilibili Frontend Development Course):</p>
-    <div class="video-container">
-        <iframe 
-            src="https://player.bilibili.com/player.html?bvid=BV1vUW9zXEuY&page=1" 
-            width="100%" 
-            height="100%" 
-            frameborder="0" 
-            allowfullscreen="allowfullscreen"
-            title="HTML & CSS Fundamentals Tutorial">
-        </iframe>
-    </div>
-    <p>This tutorial covers core HTML tags, CSS styling, and responsive design basics, perfect for frontend beginners.</p>
-</section>
+            <h2>Learning Resources</h2>
+            <p>Recommended HTML & CSS Fundamentals Tutorial (from Bilibili Frontend Development Course):</p>
+            <div class="video-container">
+                <iframe 
+                    src="https://player.bilibili.com/player.html?bvid=BV1vUW9zXEuY&page=1" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    allowfullscreen="allowfullscreen"
+                    title="HTML & CSS Fundamentals Tutorial">
+                </iframe>
+            </div>
+            <p>This tutorial covers core HTML tags, CSS styling, and responsive design basics, perfect for frontend beginners.</p>
+        </section>
     </div>
 
     <footer>
